@@ -13,7 +13,7 @@ services:
     ports:
      - "80:80"
     environment:
-     - NGINX_HOST=liuwill.com
+     - NGINX_HOST=about.iuwill.com
      - NGINX_PORT=80
     command: /bin/bash -c "envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
 
