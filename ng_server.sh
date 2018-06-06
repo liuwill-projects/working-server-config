@@ -11,6 +11,7 @@ usage()
   echo "    reload   重新加载nginx配置"
   echo "    remove   删除docker容器"
   echo "    install  安装nginx容器，仅需要执行一次"
+  echo "    enter    进入docker容器"
   echo "Run '$CALLER COMMAND --help' for more information on a command."
   exit 1
 }
@@ -41,5 +42,7 @@ elif [ "$1" = "reload" ]; then
     docker exec server-nginx nginx -s reload
 elif [ "$1" = "remove" ]; then
     docker rm server-nginx
+elif [ "$1" = "enter" ]; then
+    docker exec -it server-nginx /bin/sh
 fi
 
